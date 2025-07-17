@@ -36,7 +36,7 @@ export const dummyFilings: Filing[] = [
   {
     id: "F006",
     customer: "TransOceanic Inc.",
-    status: "Pending",
+    status: "Completed",
     submittedAt: "2025-07-13",
   },
   {
@@ -72,7 +72,7 @@ export const dummyFilings: Filing[] = [
   {
     id: "F012",
     customer: "BluePort Freight",
-    status: "Pending",
+    status: "Completed",
     submittedAt: "2025-07-11",
   },
   {
@@ -84,7 +84,7 @@ export const dummyFilings: Filing[] = [
   {
     id: "F014",
     customer: "QuickPort Exports",
-    status: "Pending",
+    status: "Completed",
     submittedAt: "2025-07-14",
   },
   {
@@ -102,7 +102,7 @@ export const dummyFilings: Filing[] = [
   {
     id: "F017",
     customer: "Navispeed Couriers",
-    status: "Pending",
+    status: "Completed",
     submittedAt: "2025-07-10",
   },
   {
@@ -114,13 +114,13 @@ export const dummyFilings: Filing[] = [
   {
     id: "F019",
     customer: "JetPort International",
-    status: "Awaiting Approval",
+    status: "Completed",
     submittedAt: "2025-07-15",
   },
   {
     id: "F020",
     customer: "BridgeCargo Pvt. Ltd.",
-    status: "Pending",
+    status: "Completed",
     submittedAt: "2025-07-13",
   },
 ];

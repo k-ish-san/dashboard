@@ -15,9 +15,9 @@ interface LinkItem {
 
 const links: LinkItem[] = [
   { icon: <LayoutDashboard className="w-5 h-5" />, name: "Dashboard", path: "/dashboard" },
-  { icon: <File className="w-5 h-5" />, name: "Filings", path: "/dashboard/Filings" },
-  { icon: <Users className="w-5 h-5" />, name: "Customers", path: "/dashboard/Customers" },
-  { icon: <MessageCircleQuestionMark className="w-5 h-5" />, name: "Help", path: "/dashboard/Help" },
+  { icon: <File className="w-5 h-5" />, name: "Filings", path: "/filings" },
+  { icon: <Users className="w-5 h-5" />, name: "Customers", path: "/customers" },
+  { icon: <MessageCircleQuestionMark className="w-5 h-5" />, name: "Help", path: "/help" },
 ];
 
 const Sidebar: React.FC = () => (
@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => (
       <img src={logo} alt="logo" className="w-6 h-6 mr-2" />
       Customs Portal
     </h2>
-    <nav className="space-y-2">
+    <nav className="mt-6 space-y-3">
       {links.map((link) => (
         <NavLink
           key={link.name}
@@ -39,7 +39,7 @@ const Sidebar: React.FC = () => (
             }`
           }
         >
-          <div className="flex flex-row gap-1.5 items-center">
+          <div className="flex flex-row gap-1.5 items-center ">
             <div className="text-green-500">{link.icon}</div>
             <div className="text-md tracking-wider">{link.name}</div>
           </div>

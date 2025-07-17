@@ -6,9 +6,11 @@ interface SummaryCardProps {
   icon: React.ReactNode;
 }
 
-const SummaryCard: React.FC<SummaryCardProps> = ({ title, count, icon }) => (
+const SummaryCard: React.FC<SummaryCardProps> = ({ title, count, icon }) =>
+(
+  
   <div className="flex justify-center items-center">
-  <div className="hover:scale-105 bg-white shadow rounded-xl p-4 space-y-2 flex flex-col w-full md:w-[320px] lg:w-[400px] justify-center items-center">
+  <div className="hover:scale-105 bg-white shadow-md shadow-lime-500 rounded-xl p-4 space-y-2 flex flex-col w-full md:w-[320px] lg:w-[400px] justify-center items-center">
     {/* Flex container for title and icon */}
     <div className="flex items-center gap-2">
       <h3
