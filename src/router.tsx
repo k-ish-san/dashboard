@@ -1,5 +1,5 @@
 // src/router.tsx
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Loader from "./components/Loader";
 
@@ -11,55 +11,75 @@ const Help = lazy(() => import("./pages/Help"));
 const Filings = lazy(() => import("./pages/Filings"));
 const DashboardLayout = lazy(() => import("./components/DashboardLayout"));
 
+// Reusable wrapper to delay showing fallback
+const DelayedFallback = ({
+  children,
+  delay = 300,
+  fallback = <Loader />,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  fallback?: React.ReactNode;
+}) => {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShow(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return <Suspense fallback={show ? fallback : null}>{children}</Suspense>;
+};
+
 const AppRouter = () => {
   return (
     <Routes>
       <Route
         path="/login"
         element={
-          <Suspense fallback={<Loader />}>
+          <DelayedFallback>
             <Login />
-          </Suspense>
+          </DelayedFallback>
         }
       />
 
       <Route
         element={
-          <Suspense fallback={<Loader />}>
+          <DelayedFallback>
             <DashboardLayout />
-          </Suspense>
+          </DelayedFallback>
         }
       >
         <Route
           path="/dashboard"
           element={
-            <Suspense fallback={<Loader />}>
+            <DelayedFallback>
               <Dashboard />
-            </Suspense>
+            </DelayedFallback>
           }
         />
         <Route
           path="/filings"
           element={
-            <Suspense fallback={<Loader />}>
+            <DelayedFallback>
               <Filings />
-            </Suspense>
+            </DelayedFallback>
           }
         />
         <Route
           path="/customers"
           element={
-            <Suspense fallback={<Loader />}>
+            <DelayedFallback>
               <Customers />
-            </Suspense>
+            </DelayedFallback>
           }
         />
         <Route
           path="/help"
           element={
-            <Suspense fallback={<Loader />}>
+            <DelayedFallback>
               <Help />
-            </Suspense>
+            </DelayedFallback>
           }
         />
       </Route>
@@ -70,4 +90,3 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
-

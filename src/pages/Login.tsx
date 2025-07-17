@@ -39,6 +39,7 @@ const Login: React.FC = () => {
       {/* Background image */}
       <img
         src={login}
+        loading="eager"
         alt="Background"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
