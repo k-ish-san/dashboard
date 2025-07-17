@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import login from "../assets/login.webp";
+import loginsm from "../assets/loginsm.webp";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -41,9 +42,14 @@ const Login: React.FC = () => {
         src={login}
         loading="eager"
         alt="Background"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="hidden md:flex absolute inset-0 w-full h-full object-cover z-0"
       />
-
+     <img
+        src={loginsm}
+        loading="eager"
+        alt="Background"
+        className="md:hidden absolute inset-0 w-full h-full object-cover z-0"
+      />
       {/* Optional overlay */}
       <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
 
