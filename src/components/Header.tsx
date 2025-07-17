@@ -2,9 +2,9 @@ import React from "react";
 import { LogOut } from "lucide-react";
 
 const Header: React.FC = () => (
-  <header className="flex justify-between items-center px-6 py-4 border-b">
+  <header className="sticky flex justify-between items-center px-6 py-4 border-b">
     <div>
-      <h1 className="text-xl font-bold lg:text-3xl lg:font-extrabold text-gray-800">Dashboard</h1>
+      <h1 className="text-2xl font-bold lg:text-3xl lg:font-extrabold text-gray-800">Dashboard</h1>
     </div>
     <div className="flex items-center gap-3">
       <span className="text-gray-600 text-xl font-medium lg:font-bold">John Doe</span>
@@ -20,7 +20,7 @@ const Header: React.FC = () => (
       <LogOut className="w-4 h-4" />
       Logout
     </button>
-    </div>
+    </div> 
   </header>
 );
 

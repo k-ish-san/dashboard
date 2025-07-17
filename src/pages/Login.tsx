@@ -47,7 +47,7 @@ const Login: React.FC = () => {
       <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
 
       {/* Login box */}
-      <div className="relative z-20 max-w-md w-full bg-transparent backdrop-blur-sm bg-opacity-90 p-8 rounded-xl shadow">
+      <div className="relative z-20 max-w-md w-full bg-transparent backdrop-blur-sm bg-opacity-90 p-8 rounded-xl shadow border-2 border-[#5D6B68]/30">
         <h2 className="text-2xl font-bold mb-6 text-center text-green-300">
           Customs Portal Login
         </h2>
@@ -62,6 +62,7 @@ const Login: React.FC = () => {
               id="email"
               type="email"
               value={email}
+              placeholder="Enter your email address"
               onChange={(e) => setEmail(e.target.value)}
               className={`w-full pl-10 px-1 pb-1 h-10 border-0 border-b-2 focus:outline-none bg-transparent text-green-300 ${
                 email && !isEmailValid
@@ -90,8 +91,9 @@ const Login: React.FC = () => {
               id="password"
               type={showPassword ? "text" : "password"}
               value={password}
+              placeholder="Enter your Password"
               onChange={(e) => setPassword(e.target.value)}
-              className={`w-full pl-10 px-1 h-10 pb-1 border-0 border-b-2 focus:outline-none bg-transparent text-green-900 ${
+              className={`w-full pl-10 px-1 h-10 pb-1 border-0 border-b-2 focus:outline-none bg-transparent text-green-300 ${
                 password && !isPasswordValid
                   ? "border-red-500 focus:border-red-400"
                   : "border-lime-500 focus:border-lime-600"
@@ -114,8 +116,8 @@ const Login: React.FC = () => {
 
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center space-x-2">
-              <input type="checkbox" className="form-checkbox text-lime-600" />
-              <span className="text-green-300">Remember me</span>
+              <input type="checkbox" className="form-checkbox text-lime-300 accent-lime-400" />
+              <span className="text-green-300 hover:text-lime-400">Remember me</span>
             </label>
             <a href="#" className="text-lime-300 hover:underline">
               Forgot password?
