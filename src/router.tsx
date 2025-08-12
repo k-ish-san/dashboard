@@ -15,7 +15,7 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route
-        path="/login"
+        path="/"
         element={
           <Suspense fallback={<Loader />}>
             <Login />
