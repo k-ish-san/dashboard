@@ -1,22 +1,15 @@
 import { useEffect, useState } from "react";
 
 const Loader = () => {
-  const [visible, setVisible] = useState(false);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 100); // Small wait before showing loader
+    // Keep loader visible for 500ms
+    const timer = setTimeout(() => setShow(false), 500);
     return () => clearTimeout(timer);
   }, []);
 
-  // This ensures loader stays visible for 500ms before disappearing
-  useEffect(() => {
-    if (visible) {
-      const timer = setTimeout(() => setVisible(false), 500);
-      return () => clearTimeout(timer);
-    }
-  }, [visible]);
-
-  if (!visible) return null;
+  if (!show) return null;
 
   return (
     <div className="flex items-center justify-center h-screen bg-[#FEFFF4]">
