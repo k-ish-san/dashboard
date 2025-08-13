@@ -46,35 +46,27 @@ The goal was to create a clean, professional portal for digital customs manageme
 
 ## 📁 Folder Structure
 
-  src/
-  ├── assets/ # Static files (e.g., login.webp), SVGs
-  ├── components/ # Shared UI components
-  │ ├── Header.tsx
-  │ ├── Sidebar.tsx
-  │ ├── SummaryCard.tsx
-  | ├── DashboardLayout.tsx
-  | ├── Loader.tsx
-  │ └── RecentFilingsTable.tsx
-  |
-  ├── data/
-  │ └── dummyFilings.ts # Mock filing data
-  ├── pages/
-  │ ├── Login.tsx
-  │ ├── Dashboard.tsx
-  │ ├── Customers.tsx
-  │ ├── Filings.tsx
-  │ └── Help.tsx
-  |
-  ├── router.tsx # Routing with lazy loading
-  └── App.tsx # Main application entry
+```plaintext
+src/
+├── assets/                  # Static files (e.g., login.webp), SVGs
+├── components/              # Shared UI components
+│   ├── Header.tsx
+│   ├── Sidebar.tsx
+│   ├── SummaryCard.tsx
+│   ├── DashboardLayout.tsx
+│   ├── Loader.tsx
+│   └── RecentFilingsTable.tsx
+│
+├── data/
+│   └── dummyFilings.ts       # Mock filing data
+│
+├── pages/
+│   ├── Login.tsx
+│   ├── Dashboard.tsx
+│   ├── Customers.tsx
+│   ├── Filings.tsx
+│   └── Help.tsx
+│
+├── router.tsx                # Routing with lazy loading
+└── App.tsx                   # Main application entry
 
-
-## 🚀 Getting Started
-
-Clone the repo and run it locally:
-
-```bash
-git clone https://github.com/your-username/dashboard.git
-cd dashboard
-npm install
-npm run dev
